@@ -27,3 +27,24 @@ def read_files():
         nano = read("../models/"+onlyfiles[i])
         nanocoll.append(nano)
     return nanocoll
+
+def assemble(particles):
+    """
+    Assemble a list of Atoms into a single Atoms object for simulation and visualization
+
+    Parameters
+    ----------
+    particles : List of atoms
+        List of atoms objects to be combined into singo ASE Atoms object
+
+    Returns
+    -------
+    assembly : Atoms 
+        THe ASE Atoms object resulting from combining all atoms in list
+
+    """
+    assembly = Atoms()
+    for i in range(len(particles)):
+        assembly+=particles[i]
+        
+    return assembly
