@@ -8,6 +8,21 @@ class vector:
     z: float()
     
     def __add__(self, other):
+        """
+        Perform vector sum between two three dimensional vectors (c = a + b).
+        
+
+        Parameters
+        ----------
+        other : vector
+            The second term in the sum
+
+        Returns
+        -------
+        vector
+            The result of the sum between two vector
+
+        """
         return vector(self.x + other.x, self.y + other.y, self.z + other.z)
     
     def __mul__(self, other):
@@ -22,4 +37,6 @@ class vector:
     def __sub__(self, other):
         return self + -other
         
-    
+
+def translate(pos, delta):
+    return pos + delta

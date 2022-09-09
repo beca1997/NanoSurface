@@ -48,3 +48,26 @@ def assemble(particles):
         assembly+=particles[i]
         
     return assembly
+
+def height(nano: Atoms, slab: Atoms):
+    """
+    Determines the height of the nanoparticle center of mass above the slab
+
+    Parameters
+    ----------
+    nano : Atoms
+        DESCRIPTION.
+    slab : Atoms
+        DESCRIPTION.
+
+    Returns
+    -------
+    height : TYPE
+        DESCRIPTION.
+
+    """
+    nano_z = nano.get_center_of_mass()[2]
+    slab_z = max(slab.get_positions()[:,2])
+    
+    height = nano_z - slab_z
+    return height
