@@ -54,7 +54,7 @@ def distance(nano1: Atoms, nano2:Atoms):
 
     """
     com_1 = nano1.get_center_of_mass()
-    com_2 = nano2.get_center_of_mas()
+    com_2 = nano2.get_center_of_mass()
     dist_vec = com_1 - com_2
     dist = np.sqrt(np.sum(dist_vec*dist_vec))
     return dist
